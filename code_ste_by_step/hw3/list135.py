@@ -16,17 +16,17 @@ class list135:
     def empty(self):
         return self._rest_of_list == None
 
-    #TODO implement a len method
     def len(self, counter=0):
         if self.empty():
-            return counter +1 if counter != 0 else 0
+            return counter if counter != 0 else 0
         while not self.empty():
             counter += 1
             self = self.rest()
             return self.len(counter)
 
 if __name__ == '__main__':
-    lst1 = list135("yee")
+    # Note: you shouldn't initialize with a value
+    lst1 = list135()
     lst1 = lst1.cons("hi")
     lst1 = lst1.cons("hello")
     print(lst1.len())
